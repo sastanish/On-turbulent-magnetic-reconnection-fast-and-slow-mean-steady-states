@@ -12,3 +12,6 @@ The [Dask](https://docs.dask.org/en/stable/index.html) library is highly recomme
 
 We use the fluid simulation framework [BOUT++](https://github.com/boutproject/BOUT-dev).  To install, follow the instructions on the [Getting Started](https://bout-dev.readthedocs.io/en/latest/user_docs/installing.html) page of their [documentation](https://bout-dev.readthedocs.io/en/latest/index.html).  The minimal installation (without SUNDIALS, PETSC, etc.) will be enough to run the code in this repository.  
 
+## Code Structure
+
+The repository is laid out as follows; *simulation_files* contains all of the required input files to run the BOUT++ code that generates the results used in the Turbulent Reconnection Model.  *analysis_files* contains the python scripts that calculate the various quantities ($U_{\rm a,in}$, $R_m$, etc) from the simulations.  *figure_files* contains all of the code used to generate each figure in the paper. All code contains an initial commented block as documentation.

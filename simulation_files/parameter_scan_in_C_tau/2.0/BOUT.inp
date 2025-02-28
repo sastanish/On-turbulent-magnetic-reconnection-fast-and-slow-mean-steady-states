@@ -1,0 +1,90 @@
+timestep = 1   # Output timestep
+nout = 200     # Number of output steps
+
+## Normalization
+v_a = 1
+delta = 1
+Lz = 80*delta
+Lx = 10*delta
+
+## Z-Grid
+MYG = 0
+
+ZMIN = 0
+ZMAX = (Lz/2) * 0.31831927   # 0.3...*2pi = 2.  z is in fractions of 2pi
+MZ = 2048
+
+[solver]
+
+type = pvode
+atol = 1e-10
+rtol = 1e-5
+#type = rk4
+#adaptive = true
+#timestep = 1e-1
+#atol = 1e-8
+#rtol = 1e-4
+mxstep = 5000
+
+[mesh]
+
+nx = 1024+4
+ny = 1
+
+dx = Lx/(nx-4)
+dy = 1.0
+
+[mesh:ddx]
+first = C2
+second = C2
+upwind = W3
+
+[mesh:ddz]
+first = FFT
+second = FFT
+upwind = W3
+
+[trm]
+
+Rm = 5 * 1e4
+Re = 5 * 1e4
+
+K_min = 1e-8
+
+chi = 1e-7 #Turbulent Hyper Diffusion
+
+C_b = 0.3
+C_g = 0.3
+C_w = 1.3
+
+tau_eq = 1 / ( sqrt(C_b) *pi)
+tau_in = 1.0
+tau = tau_in * tau_eq
+
+bracket = 2 # 0 = std, 1 = simple, 2 = arakawa
+
+[W]
+scale = 0.0
+
+bndry_xin  = dirichlet
+bndry_xout = dirichlet
+
+[K]
+function = 1e-8
+
+bndry_xin  = dirichlet
+bndry_xout = dirichlet
+
+[vort]
+scale = 0.0
+
+bndry_xin  = dirichlet_o2
+bndry_xout = dirichlet_o2
+
+[phi]
+scale = 1.0
+
+function = v_a/pi * log(cosh(pi*(x-0.5)*Lx)) + 0.001 * (Lz/13) * (cos(z-pi) + 1/2 * cos(2*(z-pi)) + 1/3 * cos(3*(z-pi)) + 1/4 * cos(4*(z-pi)) + 1/5 * cos(5*(z-pi)) + 1/6 * cos(6*(z-pi)) + 1/7 * cos(7*(z-pi)) + 1/8 * cos(8*(z-pi)) + 1/9 * cos(9*(z-pi)) + 1/10 * cos(10*(z-pi)) + 1/12 * cos(12*(z-pi)) + 1/13 * cos(13*(z-pi)) ) * exp(-((x-0.5)/0.1)^2)
+
+bndry_xin  = dirichlet(v_a/pi * log(cosh(pi*(1-0.5)*Lx)))
+bndry_xout = dirichlet(v_a/pi * log(cosh(pi*(0-0.5)*Lx)))

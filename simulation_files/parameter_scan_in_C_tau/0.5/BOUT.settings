@@ -1,0 +1,164 @@
+IncIntShear = false		# type: bool, source: default
+Lx = 10*delta		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+Lz = 80*delta		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+MXG = 2		# type: int, doc: Number of guard cells on each side in X, source: default
+MYG = 0		# type: int, doc: Number of guard cells on each side in Y, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+MZ = 2048		# type: int, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+ZMAX = (Lz/2) * 0.31831927		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+ZMIN = 0		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+append = false		# type: bool, doc: Add new outputs to the end of existing files? If false, overwrite files., source: default
+async_send = false		# type: bool, doc: Whether to use asyncronous MPI sends, source: default
+datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5		# type: string, source: Command line
+delta = 1		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+dump_on_restart = true		# type: bool, doc: Write initial state as time point 0?, source: default
+non_uniform = true		# type: bool, source: default
+nout = 80		# type: int, doc: Number of output steps, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+nz = 2048		# type: int, source: default
+optionfile = BOUT.inp		# type: string, source: default
+periodicX = false		# type: bool, doc: Make grid periodic in X?, source: default
+restart = false		# type: bool, doc: Load state from restart files?, source: default
+settingsfile = BOUT.settings		# type: string, source: default
+stopCheck = false		# type: bool, doc: Check if a file exists, and exit if it does., source: default
+stopCheckName = BOUT.stop		# type: string, doc: Name of file whose existence triggers a stop, source: default
+timestep = 1		# type: BoutReal, doc: Output time step size, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+twistshift = false		# type: bool, doc: Apply a Twist-Shift boundary using ShiftAngle?, source: default
+v_a = 1		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+wall_limit = 6		# type: BoutReal, doc: Wall time limit in hours. By default (< 0), no limit, source: Command line
+
+[K]
+bndry_xin = dirichlet		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+bndry_xout = dirichlet		# unused value (marked conditionally used), source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+evolve_bndry = false		# type: bool, source: default
+function = 1e-8		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+
+[W]
+bndry_xin = dirichlet		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+bndry_xout = dirichlet		# unused value (marked conditionally used), source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+evolve_bndry = false		# type: bool, source: default
+scale = 0.0		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+
+[all]
+evolve_bndry = false		# type: bool, source: default
+function = 0.0		# type: string, source: default
+scale = 1		# type: BoutReal, source: default
+
+[fft]
+fft_measurement_flag = estimate		# type: 20FFT_MEASUREMENT_FLAG, doc: Level speed measurements to optimise FFT settings: [estimate], measure, exhaustive, source: default
+
+[input]
+error_on_unused_options = true		# type: bool, doc: Error if there are any unused options before starting the main simulation, source: default
+max_recursion_depth = 0		# type: string, doc: Maximum recursion depth allowed in expressions. 0 = no recursion; -1 = unlimited, source: default
+transform_from_field_aligned = true		# type: bool, source: default
+validate = false		# type: bool, doc: Check for unused options and stop, source: default
+
+[laplace]
+all_terms = true		# type: bool, doc: Include first derivative terms?, source: default
+async = true		# type: bool, doc: Use asyncronous MPI send?, source: default
+dst = false		# type: bool, doc: Use Discrete Sine Transform in Z to enforce Dirichlet boundaries in Z, source: default
+extra_yguards_lower = 0		# type: int, doc: Exclude some number of points at the lower boundary, useful for staggered grids or when boundary conditions make inversion redundant, source: default
+extra_yguards_upper = 0		# type: int, doc: Exclude some number of points at the upper boundary, useful for staggered grids or when boundary conditions make inversion redundant, source: default
+filter = 0		# type: BoutReal, doc: Fraction of Z modes to filter out. Between 0 and 1, source: default
+global_flags = 0		# type: int, doc: Default flags, source: default
+include_yguards = false		# type: bool, doc: Solve Laplacian in Y guard cells?, source: default
+inner_boundary_flags = 0		# type: int, doc: Flags to set inner boundary condition, source: default
+low_mem = false		# type: bool, doc: If true, reduce the amount of memory used, source: default
+maxmode = 1024		# type: int, doc: The maximum Z mode to solve for, source: default
+nonuniform = true		# type: bool, doc: Use non-uniform grid corrections? Default is the mesh setting., source: default
+outer_boundary_flags = 0		# type: int, doc: Flags to set outer boundary condition, source: default
+type = cyclic		# type: string, source: default
+
+[mesh]
+calcParallelSlices_on_communicate = true		# type: bool, doc: Calculate parallel slices on all communicated fields, source: default
+dx = Lx/(nx-4)		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+dy = 1.0		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+extrapolate_x = false		# type: bool, source: default
+extrapolate_y = false		# type: bool, source: default
+include_corner_cells = true		# type: bool, doc: Communicate corner guard and boundary cells. Can be set to false if you are sure that you will not need these cells, for mixed derivatives D2DXDY (or anything else), for example if your grid has orthogonal x- and y-directions. This might slightly reduce communication time., source: default
+maxregionblocksize = 64		# type: int, doc: (Advanced) Sets the maximum size of continguous blocks when creating Regions, source: default
+nx = 1024+4		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+ny = 1		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+staggergrids = false		# type: bool, doc: Enable staggered grids. By default, all variables are cell centred, source: default
+symmetricGlobalX = true		# type: bool, source: default
+symmetricGlobalY = true		# type: bool, source: default
+type = bout		# type: string, source: default
+
+[mesh:ddx]
+first = C2		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+second = C2		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+upwind = W3		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+
+[mesh:ddz]
+fft_filter = 0		# type: BoutReal, source: default
+first = FFT		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+second = FFT		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+upwind = W3		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+
+[mesh:paralleltransform]
+type = identity		# type: string, source: default
+
+[output]
+enabled = true		# type: bool, doc: Write output files, source: default
+
+[phi]
+bndry_xin = dirichlet(v_a/pi * log(cosh(pi*(1-0.5)*Lx)))		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+bndry_xout = dirichlet(v_a/pi * log(cosh(pi*(0-0.5)*Lx)))		# unused value (marked conditionally used), source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+evolve_bndry = false		# type: bool, source: default
+function = v_a/pi * log(cosh(pi*(x-0.5)*Lx)) + 0.001 * (Lz/13) * (cos(z-pi) + 1/2 * cos(2*(z-pi)) + 1/3 * cos(3*(z-pi)) + 1/4 * cos(4*(z-pi)) + 1/5 * cos(5*(z-pi)) + 1/6 * cos(6*(z-pi)) + 1/7 * cos(7*(z-pi)) + 1/8 * cos(8*(z-pi)) + 1/9 * cos(9*(z-pi)) + 1/10 * cos(10*(z-pi)) + 1/12 * cos(12*(z-pi)) + 1/13 * cos(13*(z-pi)) ) * exp(-((x-0.5)/0.1)^2)		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+scale = 1.0		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+
+[psiSolver]
+inner_boundary_flags = 0		# type: int, source: default
+outer_boundary_flags = 0		# type: int, source: default
+type = cyclic		# type: string, source: default
+
+[restart_files]
+enabled = true		# type: bool, doc: Write restart files, source: default
+
+[run]
+finished = Sat Aug  3 01:35:47 2024
+		# unused value (NOT marked conditionally used), source: Output
+revision = cbeff918d337e6069deb2a84b80760f65d11c919		# unused value (NOT marked conditionally used), source: Output
+run_id = e42a27f3-7fa7-4af3-be51-bdca02dc2392		# unused value (NOT marked conditionally used), source: Output
+run_restart_from = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz		# unused value (NOT marked conditionally used), source: Output
+started = Fri Aug  2 22:09:13 2024
+		# unused value (NOT marked conditionally used), source: Output
+version = 5.1.1.dev96+gcbeff918d		# unused value (NOT marked conditionally used), source: Output
+
+[solver]
+atol = 1e-10		# type: BoutReal, doc: Absolute tolerance, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+is_nonsplit_model_diffusive = true		# type: bool, doc: If not a split operator, treat RHS as diffusive?, source: default
+mldq = 136		# type: int, source: default
+mlkeep = 0		# type: int, source: default
+mms = false		# type: bool, doc: Use Method of Manufactured Solutions to track error scaling, source: default
+mms_initialise = false		# type: bool, doc: Use MMS solution for field initial conditions, source: default
+monitor_timestep = false		# type: bool, doc: Call monitors on internal timesteps, source: default
+mudq = 136		# type: int, source: default
+mukeep = 0		# type: int, source: default
+mxstep = 5000		# type: int, doc: Maximum number of internal steps, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+nout = 80		# type: int, doc: Number of output steps. Overrides global setting., source: default
+output_step = 1		# type: BoutReal, doc: Output time step size. Overrides global 'timestep' setting., source: default
+precon_dimens = 50		# type: int, doc: Maximum Krylov dimension, source: default
+precon_tol = 0.0001		# type: BoutReal, doc: Tolerance for preconditioner, source: default
+rtol = 1e-5		# type: BoutReal, doc: Relative tolerance, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+save_repeat_run_id = false		# type: bool, doc: Write run_id and run_restart_from at every output timestep, to make it easier to concatenate output data sets in time, source: default
+type = pvode		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+use_precon = false		# type: bool, doc: Use user-supplied preconditioner, source: default
+
+[trm]
+C_b = 0.3		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+C_g = 0.3		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+C_w = 1.3		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+K_min = 1e-8		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+Re = 5 * 1e4		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+Rm = 5 * 1e4		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+bracket = 2		# type: int, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+chi = 1e-7		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+tau = tau_in * tau_eq		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+tau_eq = 1 / ( sqrt(C_b) *pi)		# source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+tau_in = 0.5		# source: Command line
+
+[vort]
+bndry_xin = dirichlet_o2		# type: string, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+bndry_xout = dirichlet_o2		# unused value (marked conditionally used), source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp
+evolve_bndry = false		# type: bool, source: default
+scale = 0.0		# type: BoutReal, source: /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_0.5/BOUT.inp

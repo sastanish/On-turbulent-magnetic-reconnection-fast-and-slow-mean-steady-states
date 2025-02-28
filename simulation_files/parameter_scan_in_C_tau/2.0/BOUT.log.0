@@ -1,0 +1,305 @@
+BOUT++ version 5.1.1.dev96+gcbeff918d
+Revision: cbeff918d337e6069deb2a84b80760f65d11c919
+Code compiled on May  7 2024 at 17:18:23
+
+B.Dudson (University of York), M.Umansky (LLNL) 2007
+Based on BOUT by Xueqiao Xu, 1999
+
+Processor number: 0 of 32
+
+pid: 3909152
+
+Compile-time options:
+	Runtime error checking enabled, level 2
+	Parallel NetCDF support disabled
+	Metrics mode is 2D
+	FFT support enabled
+	Natural language support enabled
+	LAPACK support disabled
+	NetCDF support enabled (NetCDF4)
+	PETSc support enabled
+	Pretty function name support enabled
+	PVODE support enabled
+	Score-P support disabled
+	SLEPc support disabled
+	SUNDIALS support disabled
+	Backtrace in exceptions enabled
+	Colour in logs enabled
+	OpenMP parallelisation disabled
+	Extra debug output disabled
+	Floating-point exceptions disabled
+	Signal handling support enabled
+	Field name tracking enabled
+	Message stack enabled
+	Compiled with flags : "-Wall -Wextra -Wnull-dereference -Wno-cast-function-type -DCHECK=2 -g"
+	Command line options for this run : /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/build/trm restart append trm:tau_in=2.0 wall_limit=6 nout=40 -d /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 
+Reading options file /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp
+	Option trm:tau_in = 1.0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp) overwritten with:
+		trm:tau_in = 2.0 (Command line)
+	Option nout = 200 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp) overwritten with:
+		nout = 40 (Command line)
+	Option datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 (Command line)
+	Option optionfile = BOUT.inp (default)
+	Option settingsfile = BOUT.settings (default)
+Writing options to file /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.settings
+	Option mesh:type = bout (default)
+
+Getting grid data from options
+	Option mesh:calcParallelSlices_on_communicate = 1 (default)
+	Option mesh:maxregionblocksize = 64 (default)
+	Option mesh:staggergrids = 0 (default)
+	Option mesh:include_corner_cells = 1 (default)
+	Option mesh:ddx:first = C2 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddx:second = C2 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddx:upwind = W3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:first = FFT (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:second = FFT (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:upwind = W3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddx:first = C2 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddx:second = C2 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddx:upwind = W3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:first = FFT (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:second = FFT (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:upwind = W3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ddz:fft_filter = 0 (default)
+	Option mesh:symmetricGlobalX = 1 (default)
+	Option optionfile = BOUT.inp (default)
+WARNING: The default of this option has changed in release 4.1.
+If you want the old setting, you have to specify mesh:symmetricGlobalY=false in BOUT.inp
+	Option mesh:symmetricGlobalY = 1 (default)
+Loading mesh
+	Option input:transform_from_field_aligned = 1 (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option mesh:nx = 1028 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:ny = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+Variable 'nz' not in mesh options. Setting to 0
+	Option MZ = 2048 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option nz = 2048 (default)
+	Grid size: 1028 x 1 x 2048
+Variable 'MXG' not in mesh options. Setting to 0
+	Option MXG = 2 (default)
+Variable 'MYG' not in mesh options. Setting to 0
+	Option MYG = 0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Guard cells (x,y,z): 2, 0, 0
+Variable 'ixseps1' not in mesh options. Setting to 1028
+Variable 'ixseps2' not in mesh options. Setting to 1028
+Variable 'jyseps1_1' not in mesh options. Setting to -1
+Variable 'jyseps1_2' not in mesh options. Setting to 0
+Variable 'jyseps2_1' not in mesh options. Setting to 0
+Variable 'jyseps2_2' not in mesh options. Setting to 0
+Variable 'ny_inner' not in mesh options. Setting to 0
+Finding value for NXPE (ideal = 181.019336)
+	Candidate value: 32
+	 -> Good value
+	Domain split (NXPE=32, NYPE=1) into domains (localNx=32, localNy=1)
+	Option IncIntShear = 0 (default)
+	Option periodicX = 0 (default)
+	Option async_send = 0 (default)
+	Option ZMIN = 0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option Lz = 80*delta (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option delta = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option ZMAX = 12.7328 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	EQUILIBRIUM IS SINGLE NULL (SND) 
+Connection between top of Y processor 0 and bottom of 0 in range 0 <= x < 1028
+=> This processor sending in up
+=> This processor sending in down
+WARNING adding connection: poloidal index -1 out of range
+	MYPE_IN_CORE = true
+	DXS = 36, DIN = 0. DOUT = -1
+	UXS = 36, UIN = 0. UOUT = -1
+	XIN = -1, XOUT = 1
+	Twist-shift: DI UI 
+	Option twistshift = 0 (default)
+Variable 'ShiftAngle' not in mesh options. Setting to empty vector
+Possible boundary regions are: core, sol, Boundary regions in this processor: core, 
+Constructing default regions
+	Boundary region inner X
+	Option mesh:extrapolate_x = 0 (default)
+	Option mesh:extrapolate_y = 0 (default)
+	Option mesh:dx = Lx/(nx-4) (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option Lx = 10*delta (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:nx = 1024+4 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option mesh:dy = 1.0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option ZMIN = 0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option ZMAX = 12.7328 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+Variable 'dz' not in mesh options. Setting to 3.906365e-02
+	Option mesh:paralleltransform:type = identity (default)
+Variable 'g11' not in mesh options. Setting to 1.000000e+00
+Variable 'g22' not in mesh options. Setting to 1.000000e+00
+Variable 'g33' not in mesh options. Setting to 1.000000e+00
+Variable 'g12' not in mesh options. Setting to 0.000000e+00
+Variable 'g13' not in mesh options. Setting to 0.000000e+00
+Variable 'g23' not in mesh options. Setting to 0.000000e+00
+	Local maximum error in diagonal inversion is 0.000000e+00
+	Local maximum error in off-diagonal inversion is 0.000000e+00
+Variable 'J' not in mesh options. Setting to 0.000000e+00
+	WARNING: Jacobian 'J' not found. Calculating from metric tensor
+Variable 'Bxy' not in mesh options. Setting to 0.000000e+00
+	WARNING: Magnitude of B field 'Bxy' not found. Calculating from metric tensor
+Variable 'ShiftTorsion' not in mesh options. Setting to 0.000000e+00
+	WARNING: No Torsion specified for zShift. Derivatives may not be correct
+Calculating differential geometry terms
+	Communicating connection terms
+	Option non_uniform = 1 (default)
+Variable 'd2x' not in mesh options. Setting to 0.000000e+00
+	WARNING: differencing quantity 'd2x' not found. Calculating from dx
+Variable 'd2y' not in mesh options. Setting to 0.000000e+00
+	WARNING: differencing quantity 'd2y' not found. Calculating from dy
+	done
+	Option append = true (Command line)
+	Option datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 (Command line)
+	Option output:enabled = 1 (default)
+	Option datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 (Command line)
+	Option restart_files:enabled = 1 (default)
+	Option solver:type = pvode (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option solver:monitor_timestep = 0 (default)
+	Option solver:save_repeat_run_id = 0 (default)
+	Option solver:is_nonsplit_model_diffusive = 1 (default)
+	Option solver:mms = 0 (default)
+	Option solver:mms_initialise = 0 (default)
+	Option nout = 40 (Command line)
+	Option solver:nout = 40 (default)
+	Option timestep = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option solver:output_step = 1 (default)
+	Option solver:use_precon = 0 (default)
+	Option solver:precon_dimens = 50 (default)
+	Option solver:precon_tol = 0.0001 (default)
+	Option solver:mxstep = 5000 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option solver:atol = 1e-10 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option solver:rtol = 1e-05 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+Setting up output (experimental output) file
+	Option restart = true (Command line)
+	Option trm:Re = 50000 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:Rm = 50000 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:C_b = 0.3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:C_g = 0.3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:C_w = 1.3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:tau_in = 2.0 (Command line)
+	Option trm:tau_eq = 1 / ( sqrt(C_b) *pi) (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:C_b = 0.3 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:tau = 1.1623 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:chi = 1e-07 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option trm:K_min = 1e-08 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+Setting boundary for variable phi
+	core region: 	Option phi:bndry_xin = dirichlet(v_a/pi * log(cosh(pi*(1-0.5)*Lx))) (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option v_a = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option Lx = 10*delta (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option phi:function = v_a/pi * log(cosh(pi*(x-0.5)*Lx)) + 0.001 * (Lz/13) * (cos(z-pi) + 1/2 * cos(2*(z-pi)) + 1/3 * cos(3*(z-pi)) + 1/4 * cos(4*(z-pi)) + 1/5 * cos(5*(z-pi)) + 1/6 * cos(6*(z-pi)) + 1/7 * cos(7*(z-pi)) + 1/8 * cos(8*(z-pi)) + 1/9 * cos(9*(z-pi)) + 1/10 * cos(10*(z-pi)) + 1/12 * cos(12*(z-pi)) + 1/13 * cos(13*(z-pi)) ) * exp(-((x-0.5)/0.1)^2) (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option v_a = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option Lx = 10*delta (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option delta = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option Lz = 80*delta (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option phi:scale = 1 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option all:evolve_bndry = 0 (default)
+	Option phi:evolve_bndry = 0 (default)
+Setting boundary for variable vort
+	core region: 	Option vort:bndry_xin = dirichlet_o2 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option all:function = 0.0 (default)
+	Option vort:scale = 0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option all:evolve_bndry = false (default)
+	Option vort:evolve_bndry = 0 (default)
+Setting boundary for variable K
+	core region: 	Option K:bndry_xin = dirichlet (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option K:function = 1e-8 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option K:evolve_bndry = 0 (default)
+Setting boundary for variable W
+	core region: 	Option W:bndry_xin = dirichlet (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option all:function = 0.0 (default)
+	Option W:scale = 0 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Option all:evolve_bndry = false (default)
+	Option W:evolve_bndry = 0 (default)
+	Option psiSolver:type = cyclic (default)
+	Option psiSolver:inner_boundary_flags = 0 (default)
+	Option psiSolver:outer_boundary_flags = 0 (default)
+	Option fft:fft_measurement_flag = estimate (default)
+	Option laplace:type = cyclic (default)
+Initialising Laplacian inversion routines
+	Option laplace:async = 1 (default)
+	Option laplace:filter = 0 (default)
+	Option laplace:maxmode = 1024 (default)
+	Option laplace:low_mem = 0 (default)
+	Option laplace:nonuniform = 1 (default)
+	Option laplace:all_terms = 1 (default)
+	Option laplace:global_flags = 0 (default)
+	Option laplace:inner_boundary_flags = 0 (default)
+	Option laplace:outer_boundary_flags = 0 (default)
+	Option laplace:include_yguards = 0 (default)
+	Option laplace:extra_yguards_lower = 0 (default)
+	Option laplace:extra_yguards_upper = 0 (default)
+	Option laplace:dst = 0 (default)
+	Option trm:bracket = 2 (/users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.inp)
+	Brackets: Arakawa scheme
+Variable 'grid_id' not in mesh options. Setting to 
+Variable 'hypnotoad_version' not in mesh options. Setting to 
+Variable 'hypnotoad_git_hash' not in mesh options. Setting to 
+Variable 'hypnotoad_git_diff' not in mesh options. Setting to 
+Variable 'hypnotoad_geqdsk_filename' not in mesh options. Setting to 
+	Option run_id = e3181d49-3ff5-4e64-86a5-fd956509f3a4 (Solver)
+	Option tt = 97 (Solver)
+	Option hist_hi = 96 (Solver)
+Variable 'grid_id' not in mesh options. Setting to 
+Variable 'hypnotoad_version' not in mesh options. Setting to 
+Variable 'hypnotoad_git_hash' not in mesh options. Setting to 
+Variable 'hypnotoad_git_diff' not in mesh options. Setting to 
+Variable 'hypnotoad_geqdsk_filename' not in mesh options. Setting to 
+	Option wall_limit = 6 (Command line)
+	Option stopCheck = 0 (default)
+	Option stopCheckName = BOUT.stop (default)
+	Option datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 (Command line)
+Solver running for 40 outputs with output timestep of 1.000000e+00
+Initialising solver
+Initialising PVODE solver
+	3d fields = 4, 2d fields = 0 neq=8388608, local_N=262144
+	Option solver:mudq = 136 (default)
+	Option solver:mldq = 136 (default)
+	Option solver:mukeep = 0 (default)
+	Option solver:mlkeep = 0 (default)
+Running simulation
+
+Run ID: f6067927-a5da-446d-8fac-ab5c8b88bd5b
+Restarting from ID: e3181d49-3ff5-4e64-86a5-fd956509f3a4
+
+Run started at  : Mon Aug  5 19:57:39 2024
+	Option restart = true (Command line)
+	Option append = true (Command line)
+	Option dump_on_restart = 0 (default)
+	Option input:validate = 0 (default)
+	Option input:error_on_unused_options = 1 (default)
+	Option optionfile = BOUT.inp (default)
+	Option datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 (Command line)
+Sim Time  |  RHS evals  | Wall Time |  Calc    Inv   Comm    I/O   SOLVER
+
+9.800e+01       3254       1.73e+03    74.4    9.5    0.3    0.2   15.6
+9.900e+01       3521       1.86e+03    74.5    9.5    0.3    0.0   15.6
+1.000e+02       3468       1.83e+03    73.9    9.5    0.3    0.0   16.2
+1.010e+02       3181       1.67e+03    74.1    9.5    0.4    0.0   16.0
+1.020e+02       2922       1.52e+03    74.8    9.6    0.3    0.0   15.2
+1.030e+02       3251       1.70e+03    74.4    9.6    0.3    0.0   15.6
+1.040e+02       3192       1.69e+03    73.8    9.6    0.3    0.0   16.3
+1.050e+02       3285       1.73e+03    74.0    9.5    0.3    0.0   16.1
+1.060e+02       3355       1.75e+03    74.7    9.6    0.4    0.0   15.3
+1.070e+02       3431       1.79e+03    74.6    9.6    0.3    0.0   15.4
+1.080e+02       3391       1.77e+03    74.9    9.6    0.3    0.0   15.1
+Only 2.557121e+03 seconds (1.45 steps) left. Quitting
+User signalled to quit. Returning
+
+Run finished at  : Tue Aug  6 01:15:01 2024
+Run time : 5 h 17 m 22 s
+	Option datadir = /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0 (Command line)
+	Option settingsfile = BOUT.settings (default)
+Writing options to file /users/xnb22215/clean_turbulent_reconnection_model/trm_mink/scan/data/tau_2.0/BOUT.settings
+	Option time_report:show = 0 (default)
