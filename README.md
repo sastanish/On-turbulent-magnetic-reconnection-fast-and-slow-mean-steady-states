@@ -28,7 +28,7 @@ Contains the python scripts that calculate the various quantities ($U_{\rm a,in}
 
 - **figure_files**
 
-Contains all of the code used to generate each figure in the paper. All code contains an initial commented block as documentation. These scripts will not work 'out of the box'.  Some modification of these scripts is required to point them to the correct data files on your local machine.  
+Contains all of the code used to generate each figure in the paper. All code contains an initial commented block as documentation. These scripts will not work 'out of the box'.  Some modification is required to point them to the correct data files on your local machine.  
 
 ## Questions and Contact Details
 
