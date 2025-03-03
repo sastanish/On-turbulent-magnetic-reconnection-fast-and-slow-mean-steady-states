@@ -34,4 +34,4 @@ Contains all of the code used to generate each figure in the paper. All code con
 
 ## Questions and Contact Details
 
-I am available via email (see email address for correspondence in the [paper](https://arxiv.org/abs/2409.07346) for any questions or issues regarding the code used in this repository.
+I am available via email (see email address for correspondence in the [paper](https://arxiv.org/abs/2409.07346)) for any questions or issues regarding the code used in this repository.
