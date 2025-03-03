@@ -5,12 +5,14 @@ This repository contains all the files required to reproduce the data and figure
 ## Installation and Required Software
 
 All the data-analysis and image generation is done via python scripts for which the following packages are required:
-    - [Matplotlib](https://matplotlib.org/) &mdash; version 
-    - [NumPy](https://numpy.org/) &mdash; version 
-    - [Xarray](https://docs.xarray.dev/en/stable/index.html) &mdash; version 
-The [Dask](https://docs.dask.org/en/stable/index.html) library is highly recommended to enable parallelized read/write operations via Xarray.
 
-We use the fluid simulation framework [BOUT++](https://github.com/boutproject/BOUT-dev).  To install, follow the instructions on the [Getting Started](https://bout-dev.readthedocs.io/en/latest/user_docs/installing.html) page of their [documentation](https://bout-dev.readthedocs.io/en/latest/index.html).  The minimal installation (without SUNDIALS, PETSC, etc.) will be enough to run the code in this repository.  
+ - [Matplotlib](https://matplotlib.org/) &mdash; v3.9.2 
+ - [NumPy](https://numpy.org/) &mdash; v1.26.4
+ - [Xarray](https://docs.xarray.dev/en/stable/index.html) &mdash; v2023.6.0
+
+The [Dask](https://docs.dask.org/en/stable/index.html) library is highly recommended to enable parallelized read/write operations via Xarray.  All version numbers are the versions used in this project.  It is likely that most modern versions of these packages will suffice.
+
+We use the fluid simulation framework [BOUT++](https://github.com/boutproject/BOUT-dev) v5.1.1.  To install, follow the instructions on the [Getting Started](https://bout-dev.readthedocs.io/en/latest/user_docs/installing.html) page of their [documentation](https://bout-dev.readthedocs.io/en/latest/index.html).  The minimal installation (without SUNDIALS, PETSC, etc.) will be enough to run the code in this repository.  
 
 ## Code Structure
 
