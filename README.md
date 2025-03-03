@@ -16,4 +16,20 @@ We use the fluid simulation framework [BOUT++](https://github.com/boutproject/BO
 
 ## Code Structure
 
-The repository is laid out as follows; *simulation_files* contains all of the required input files to run the BOUT++ code that generates the results used in the Turbulent Reconnection Model.  *analysis_files* contains the python scripts that calculate the various quantities ($U_{\rm a,in}$, $R_m$, etc) from the simulations.  *figure_files* contains all of the code used to generate each figure in the paper. All code contains an initial commented block as documentation.
+The repository is laid out as follows:
+
+ - **simulation_files**
+
+Contains all of the required input files to run the BOUT++ code that generates the results used in the Turbulent Reconnection Model.  Command line arguments can be used to change the values of $C_\tau$ and $C_\beta$ as in the paper.  The *parameter_scan_in_C_tau* subdirectory contains the BOUT.setting, BOUT.inp, and a BOUT.log file that was used to generate the original data. 
+
+ - **analysis_files**
+
+Contains the python scripts that calculate the various quantities ($U_{\rm a,in}$, $R_m$, etc) from the simulations.  
+
+- **figure_files**
+
+Contains all of the code used to generate each figure in the paper. All code contains an initial commented block as documentation. These scripts will not work 'out of the box'.  Some modification of these scripts is required to point them to the correct data files on your local machine.  
+
+## Questions and Contact Details
+
+I am available via email (see email address for correspondence in the [paper](https://arxiv.org/abs/2409.07346) for any questions or issues regarding the code used in this repository.
