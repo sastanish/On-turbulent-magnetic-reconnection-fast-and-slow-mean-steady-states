@@ -1,6 +1,8 @@
 # On turbulent magnetic reconnection: fast and slow mean steady-states
 
-This repository contains all the files required to reproduce the data and figures within the paper [On turbulent magnetic reconnection: fast and slow mean steady-states](https://arxiv.org/abs/2409.07346)
+This repository contains all the files required to reproduce the data and figures within the paper, *On turbulent magnetic reconnection: fast and slow mean steady-states*
+
+ - [preprint](https://arxiv.org/abs/2409.07346)
 
 ## Installation and Required Software
 
