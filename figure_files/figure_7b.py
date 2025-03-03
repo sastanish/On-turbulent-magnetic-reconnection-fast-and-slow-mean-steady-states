@@ -1,3 +1,7 @@
+#
+# Generates the sub-figure in figure 7 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+#
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
@@ -38,7 +42,5 @@ xticks = ax.xaxis.get_major_ticks()
 xticks[-1].set_visible(False)
 
 ax.legend()
-#bbox_to_anchor=(0.1, 0.8, 0.82, 0.18), loc='lower left', mode='expand', ncols=4)
 
-#plt.tight_layout()
 plt.savefig('reconnection_scaling.svg',bbox_inches='tight')

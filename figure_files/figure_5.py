@@ -1,3 +1,9 @@
+#
+# Generates figure 5 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
+# Steady-State Current and turbulent energy as a function of C_tau
+#
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy.polynomial import Polynomial
@@ -51,19 +57,6 @@ for i,tau in enumerate(taus):
 ax2.plot(taus,K_max,marker='.',linestyle='',label='hres TRM: $K$',color='tab:blue',markersize=8)
 ax.plot(taus,J_avg, marker='x',linestyle='',label='TRM: $|J|$',color='tab:red')
 
-### For the tearing C_tau = 0.2
-### case, here are the calculated
-### values for mean and std at 
-### the diff region center
-
-#J = np.loadtxt('../J0_tau_' + str(0.2) + '.txt')
-#K = np.loadtxt('../K_tau_' + str(0.2) + '.txt')
-
-#ax.errorbar(0.2,np.abs(np.mean(J[110:151])),yerr=np.abs(np.std(J[110:151])),marker='x',linestyle='',label='TRM: $|J|$',color='tab:red')
-#ax2.plot(0.2,np.abs(np.mean(K[110:151])),marker='.',linestyle='',label='hres TRM: $K$',color='tab:blue',markersize=8)
-
-##############################
-
 ax.set_xlabel('$C_\\tau$')
 ax.set_ylabel('$J_c$')
 
@@ -88,22 +81,15 @@ ax2.plot(taus,K_max,marker='.',linestyle='',color='tab:blue',markersize=8)
 custom_lines = [
                 Line2D([0], [0], color='tab:red', marker='x', linestyle='', lw=4),
                 Line2D([0], [0], color='tab:blue', marker='.',linestyle='', lw=4),
-#                Line2D([0], [0], color='black', marker= '.',linestyle='', lw=2),
                 Line2D([0], [0], color='grey', linestyle= '-', lw=2)
-#                Line2D([0], [0], color='grey', linestyle= '--', lw=2),
-#                Line2D([0], [0], color='black', linestyle= '-', lw=2)
                ]
 
 custom_labels = [
                  '$J_c$',
                  '$K_c$',
                  '$\\min\\left( J_{\\tau}, J_{\\eta} \\right)$'
-#                 'high res',
-#                 '$|J|=J_0 / C_\\tau$',
-#                 'rmhd: $\\langle |J| \\rangle$'
                 ]
 plt.legend(custom_lines,custom_labels,loc='center right')
 
 
-plt.savefig('J0_vs_tau.png')
 plt.savefig('J0_vs_tau.png',bbox_inches='tight',dpi=600)

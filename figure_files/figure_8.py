@@ -1,3 +1,7 @@
+#
+# Generates figure 8 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+#
 import xarray as xr
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,8 +23,6 @@ fig_width = jour_sizes["APJ"]["twocol"]
 # Our figure's aspect ratio
 golden = (1 + 5 ** 0.5) / 2
 # In figsize - (my_width, my_width/golden)
-
-
 
 def prefunc(ds):
     return ds.drop_isel(x=[0,1,-2,-1])

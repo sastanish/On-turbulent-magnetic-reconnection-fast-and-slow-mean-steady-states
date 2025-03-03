@@ -1,3 +1,9 @@
+#
+# Generates figure 4 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
+# Current and Turbulent energy at the center of the current sheet vs time.
+#
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -32,7 +38,6 @@ for tau in [0.1, 0.5, 1.0, 1.5]:
     ax2.tick_params(axis='y',labelcolor='tab:blue')
 
     ax2.set_yscale('log')
-    #ax2.set_ylim(1e-9,1e-6)
 
     fig.tight_layout()
     plt.savefig(f'J_K_pic_{tau}.png')

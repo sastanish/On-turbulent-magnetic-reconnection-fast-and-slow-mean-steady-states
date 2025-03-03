@@ -1,3 +1,9 @@
+#
+# Generates figure 6 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
+# Plots the steady-state diffusion region width vs Mach-number
+#
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy.polynomial import Polynomial
@@ -26,8 +32,8 @@ fig, ax = plt.subplots(figsize=(fig_width,fig_width/golden))
 
 for i,tau in enumerate([0.5, 1.0, 1.5]):
 
-    va = np.loadtxt('../va_tau_' + str(tau) + '_safety_0.txt')[30:]
-    width = np.loadtxt('../width_tau_' + str(tau) + '_safety_0.txt')[30:]
+    va = np.loadtxt('$SUMMARY_STATISTICS_DIR' + 'va_tau_' + str(tau) + '_safety_0.txt')[30:]
+    width = np.loadtxt('$SUMMARY_STATISTICS_DIR' + 'width_tau_' + str(tau) + '_safety_0.txt')[30:]
 
     fit = Polynomial.fit(va,width,1).convert().coef
     x = np.linspace(0.38,0.7)

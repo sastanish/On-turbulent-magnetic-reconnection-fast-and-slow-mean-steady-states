@@ -1,3 +1,9 @@
+#
+# Generates figure 2 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
+# Plots the Mach-number vs time of each C_tau run.
+#
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
@@ -28,7 +34,7 @@ colors = ['tab:blue','tab:orange','tab:green','tab:red','tab:purple','tab:brown'
 for i,tau in enumerate([0.1, 0.5, 1.0, 1.5, 2.0, 2.5]):
 
     for s in range(5):
-        rate = np.abs(np.loadtxt('../Ma_in_tau_' + str(tau) + '_safety_' + str(s) + '.txt')) #abs is from v_in being negative at the top of the sheet
+        rate = np.abs(np.loadtxt('$SUMMARY_STATISTICS_DIR' + 'Ma_in_tau_' + str(tau) + '_safety_' + str(s) + '.txt')) #abs is from v_in being negative at the top of the sheet
         if s == 0:
             rates = np.zeros((5,len(rate)))
         rates[s,:] = rate
@@ -40,7 +46,6 @@ ax.set_xlabel('$t$')
 ax.set_ylabel('$M_{\\rm in}$')
 xticks = ax.xaxis.get_major_ticks()
 xticks[-1].set_visible(False)
-#ax.set_ylim(0,0.12)
 
 fig.subplots_adjust(top=0.8)
 fig.legend(bbox_to_anchor=(0.1, 0.8, 0.82, 0.18), loc='lower left', mode='expand', ncols=3)

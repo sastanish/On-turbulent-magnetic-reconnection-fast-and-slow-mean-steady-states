@@ -1,3 +1,7 @@
+#
+# Generates the main figure in figure 7 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
@@ -46,15 +50,6 @@ for i,Cb in enumerate([0.28, 0.32, 0.35]):
 
     ax.plot(time,rate,label=f'$C_\\beta ={Cb}$',color=colors[i],linestyle='--')
 
-#for s in range(5):
-#    rate = np.abs(np.loadtxt('/media/us/clean_fast_reconnection/trm_mink/analysis/summary_statistics/Ma_in_tau_' + str(1.0) + '_safety_' + str(s) + '.txt')) #abs is from v_in being negative at the top of the sheet
-#    if s == 0:
-#        rates = np.zeros((5,len(rate)))
-#    rates[s,:] = rate
-#time = [j for j in range(len(rate))]
-
-#ax.plot(time[:-10],rate[:-10],label=f'$C_\\beta = 0.3$',color=colors[-1])
-
 ax.set_xlabel('$t$')
 ax.set_ylabel('$M_{\\rm in}$')
 xticks = ax.xaxis.get_major_ticks()
@@ -63,5 +58,4 @@ xticks[-1].set_visible(False)
 fig.subplots_adjust(top=0.8)
 fig.legend(bbox_to_anchor=(0.1, 0.8, 0.82, 0.18), loc='lower left', mode='expand', ncols=3)
 
-#plt.tight_layout()
 plt.savefig('reconnection_rate_vs_time.svg',bbox_inches='tight',dpi=400)

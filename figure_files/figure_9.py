@@ -1,3 +1,8 @@
+#
+# Generates the main figure in figure 9 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
+import numpy as np
 import xarray as xr
 import numpy as np
 import matplotlib.pyplot as plt

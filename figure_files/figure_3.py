@@ -1,3 +1,9 @@
+#
+# Generates figure 3 in Turbulent Magnetic Reconnection: fast and slow 
+# mean steady states
+# 
+# Images of the plasma current.
+#
 import sys
 import os
 import xarray as xr
@@ -12,13 +18,12 @@ plt.rcParams.update({
 })
 
 
-
 taus = [0.1, 0.1, 1.0, 1.0, 2.5, 2.5]
 times = [10, 91, 10, 63, 10, 146]
 
 for tau, time in zip(taus,times):
 
-    ds = xr.open_dataarray(f'./j_par_tau_{tau}_t_{time}.nc')
+    ds = xr.open_dataarray('$SIMULATION_DIR' + f'/j_par_tau_{tau}_t_{time}.nc')
 
     fig, ax = plt.subplots(figsize=(8,4),layout='tight')
 
